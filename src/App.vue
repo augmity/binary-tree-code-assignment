@@ -1,20 +1,46 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <h3>Binary Tree</h3>
+    <BinaryTree v-bind:root="binaryTreeData" />
+    <div>
+      <button @click="traverseInOrder">In-Order</button>
+      <button @click="traversePreOrder">Pre-Order</button>
+      <button @click="traversePostOrder">Post-Order</button>
+    </div>
+    <Log v-bind:items="log" />
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
+import { Component, Vue, Prop } from 'vue-property-decorator';
+import BinaryTree from './binary-tree/binary-tree.component.vue';
+import Log from './components/log.component.vue';
+
+import { binaryTreeData, traverseInOrder, traversePostOrder, traversePreOrder } from './binary-tree';
 
 @Component({
   components: {
-    HelloWorld,
+    BinaryTree,
+    Log,
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+
+  @Prop() private log?: number[];
+  binaryTreeData = binaryTreeData;
+
+  traverseInOrder() {
+    this.log = traverseInOrder(binaryTreeData);
+  }
+
+  traversePostOrder() {
+    this.log = traversePostOrder(binaryTreeData);
+  }
+
+  traversePreOrder() {
+    this.log = traversePreOrder(binaryTreeData);
+  }
+}
 </script>
 
 <style>
