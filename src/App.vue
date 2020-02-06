@@ -1,12 +1,18 @@
 <template>
   <div id="app">
     <h3>Binary Tree</h3>
-    <BinaryTree v-bind:root="binaryTreeData" />
+    <BinaryTree v-bind:root="binaryTreeData" class="binary-tree" />
+
+    <p>Choose a travesal method:</p>
+
     <div>
       <button @click="traverseInOrder">In-Order</button>
       <button @click="traversePreOrder">Pre-Order</button>
       <button @click="traversePostOrder">Post-Order</button>
     </div>
+
+    <h4 v-if="log">Results</h4>
+
     <Log v-bind:items="log" />
   </div>
 </template>
@@ -50,6 +56,12 @@ export default class App extends Vue {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  width: 500px;
+  margin: 0 auto;
   margin-top: 60px;
+}
+
+.binary-tree {
+  margin-bottom: 16px;
 }
 </style>

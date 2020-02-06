@@ -24,8 +24,11 @@ ul {
 }
 
 li {
-  display: inline-block;
-  margin: 0 8px;
+  padding: 2px 4px;
+}
+
+li:nth-child(even) {
+  background-color: #eee;
 }
 
 </style>
