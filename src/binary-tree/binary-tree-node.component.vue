@@ -20,7 +20,6 @@ export default class BinaryTreeNodeComponent extends Vue {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .binary-tree-node-value {
   margin: 4px 8px;

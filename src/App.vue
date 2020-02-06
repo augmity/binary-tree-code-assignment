@@ -24,6 +24,12 @@ import Log from './components/log.component.vue';
 
 import { binaryTreeData, traverseInOrder, traversePostOrder, traversePreOrder } from './binary-tree';
 
+//
+// The App component puts all the other component together,
+// but the "business logic" (traversing functions, data, etc.) is kept outside of the App component, in the '/binary-tree' dir.
+//
+// For this example I've used TypeScript (for data type-checking) and class-style components (easier to read the code, allows intellisense, etc.)
+//
 @Component({
   components: {
     BinaryTree,
@@ -32,9 +38,11 @@ import { binaryTreeData, traverseInOrder, traversePostOrder, traversePreOrder } 
 })
 export default class App extends Vue {
 
-  @Prop() private log?: number[];
+  // The tree data is imported from a file here, but could be also loaded from the server, etc.
   binaryTreeData = binaryTreeData;
+  @Prop() private log?: number[];
 
+  // When the user clicks a button, a new log is generated and presented back to the user
   traverseInOrder() {
     this.log = traverseInOrder(binaryTreeData);
   }

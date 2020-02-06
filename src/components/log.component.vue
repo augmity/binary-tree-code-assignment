@@ -15,9 +15,8 @@ export default class Log extends Vue {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
 
+<style scoped>
 ul {
   list-style-type: none;
   padding: 0;
