@@ -56,9 +56,14 @@ export default class App extends Vue {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  width: 500px;
-  margin: 0 auto;
   margin-top: 60px;
+}
+
+@media (min-width: 550px) { 
+  #app {
+    width: 500px;
+    margin: 0 auto;
+  }
 }
 
 .binary-tree {
