@@ -14,20 +14,20 @@ export const traverseInOrder = <T>(node: BinaryTreeNode<T>, arr: T[] = []): T[] 
 export const traversePreOrder = <T>(node: BinaryTreeNode<T>, arr: T[] = []): T[] => {
   arr.push(node.value);
   if (node.leftNode) {
-    traverseInOrder(node.leftNode, arr) ;
+    traversePreOrder(node.leftNode, arr) ;
   }
   if (node.rightNode) {
-    traverseInOrder(node.rightNode, arr) ;
+    traversePreOrder(node.rightNode, arr) ;
   }
   return arr;
 }
 
 export const traversePostOrder = <T>(node: BinaryTreeNode<T>, arr: T[] = []): T[] => {
   if (node.leftNode) {
-    traverseInOrder(node.leftNode, arr) ;
+    traversePostOrder(node.leftNode, arr) ;
   }
   if (node.rightNode) {
-    traverseInOrder(node.rightNode, arr) ;
+    traversePostOrder(node.rightNode, arr) ;
   }
   arr.push(node.value);
   return arr;
